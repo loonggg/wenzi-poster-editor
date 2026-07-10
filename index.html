@@ -620,7 +620,7 @@ body {
 </div>
 
 <script>
-const DEFAULT_AVATAR = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%3E%3Ccircle cx='25' cy='25' r='24' fill='%23E8E6D9'/%3E%3C/svg%3E";
+const DEFAULT_AVATAR = "assets/avatar.jpg";
 const $ = id => document.getElementById(id);
 let fileAvatar = null;
 
@@ -665,9 +665,9 @@ const pad = n => String(n).padStart(2, '0');
 $('date').value = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
 
 // 默认示例内容
-$('title').value = '写一写，今天学到的事';
+$('title').value = '文字海报编辑器使用说明';
 $('name').value = 'moss';
-$('md').value = '## 为什么开始写笔记\n\n把零散的想法**落到文字里**，是最好的整理方式。==真正记住一个概念，是能给别人讲清楚==，而写作逼着你完成这件事。\n\n- 每天写一段，不用长\n- 只写今天*真正搞懂*的那一点\n- 定期回看，删掉废话\n\n> 输出倒逼输入，是这个时代最稳的成长杠杆。\n\n顺手贴一段代码习惯：\n\n```js\nfunction review(note) {\n  return note.trim().length > 0;\n}\n```\n\n更多内容见 [我的博客](https://example.com)，慢慢补。';
+$('md').value = '## 这是什么\n\n一个**本地优先、离线可用**的 Markdown 文字海报生成器。把文章粘进来，秒变一张精致海报，==还能一键截图==发到小红书、小绿书等内容平台。\n\n## 四步搞定\n\n1. 在左侧粘贴 Markdown 正文\n2. 填好标题、昵称、头像\n3. 内容多时在卡片里上下滑动\n4. 每滑一屏点一次「截图」，滑到底就得到一组图\n\n## 支持的写法\n\n- `## 标题` 分级标题\n- `**加粗**` 与 `==高亮==` 强调重点\n- `> 引用` 突出金句\n- 行内代码 `code` 与代码块\n\n```js\nfunction hello() {\n  return "你好，海报";\n}\n```\n\n> 小技巧：每屏截图会自动用标题命名，方便整理成一组图。\n\n## 为什么用它\n\n无需安装、无需联网，打开即用；字体已打包本地，==断网也能流畅排版==。内容多了就滑动分屏，每一屏都是一张可直接发布的图。\n\n把你的第一篇文章粘进来，开始制作吧。';
 
 // 事件绑定
 $('title').addEventListener('input', render);

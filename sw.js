@@ -1,12 +1,13 @@
 // 文字海报编辑器 · Service Worker
 // 改动任何文件后，把 CACHE 版本号 +1，用户才会拿到新版
-const CACHE = 'wenzi-poster-v2';
+const CACHE = 'wenzi-poster-v3';
 const ASSETS = [
   './',
   './index.html',
   './marked.min.js',
   './html2canvas.min.js',
   './manifest.webmanifest',
+  './assets/avatar.jpg',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon-maskable-512.png',
