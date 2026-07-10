@@ -299,6 +299,46 @@ body {
   .capture-btn { left: auto; right: 0; bottom: -58px; margin-left: 0; }
 }
 
+/* —— 操作指引（卡片右侧竖排） —— */
+.guide {
+  flex: none;
+  width: 196px;
+  align-self: flex-start;
+  margin: 6px 0 0 16px;
+  background: #FBFAF6;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(60, 45, 30, 0.10);
+  padding: 16px 16px 14px;
+}
+.guide-title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; letter-spacing: .12em;
+  color: var(--text-2); text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.guide-title::before {
+  content: ''; width: 16px; height: 3px; border-radius: 2px; background: var(--accent);
+}
+.guide ol { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+.guide li {
+  position: relative; padding-left: 30px; margin-bottom: 13px;
+  counter-increment: step;
+}
+.guide li:last-child { margin-bottom: 0; }
+.guide li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: 1px;
+  width: 21px; height: 21px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  font-size: 11px; font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  display: grid; place-items: center;
+}
+.guide li b { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.guide li span { display: block; font-size: 11.5px; color: var(--text-2); line-height: 1.5; }
+@media (max-width: 1320px) { .guide { display: none; } }
+
 /* ============ 海报卡片（严格按提示词规范） ============ */
 .card {
   position: relative;
@@ -567,6 +607,15 @@ body {
       <span>截图</span>
     </button>
     </div>
+    <aside class="guide" aria-label="操作指引">
+      <div class="guide-title">怎么用</div>
+      <ol>
+        <li><b>粘贴正文</b><span>把 Markdown 粘进左侧输入框</span></li>
+        <li><b>填写信息</b><span>标题 · 昵称 · 头像</span></li>
+        <li><b>上下滑动</b><span>内容多时在卡片内浏览</span></li>
+        <li><b>逐屏截图</b><span>每屏点「截图」，滑到底得一组图</span></li>
+      </ol>
+    </aside>
   </div>
 </div>
 
